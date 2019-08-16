@@ -10,3 +10,12 @@ services:
       - .:/home/node/app
       - ./transfer:/transfer
     command: "/transfer/startup.sh"
+  storybook:
+    image: node:latest
+    ports:
+      - "6006:6006"
+    working_dir: /home/node/app
+    volumes:
+      - .:/home/node/app
+      - ./transfer:/transfer
+    command: "/transfer/storybook.sh"
